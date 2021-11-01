@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../strings.dart';
+import 'common/showcase_config.dart';
 import 'common/showcase_scaffold.dart';
 import 'common/showcase_title.dart';
 
@@ -30,43 +31,32 @@ class _ShowcaseAnimatedContainerState extends State<ShowcaseAnimatedContainer> {
     return ShowcaseScaffold(
       title: ShowcaseTitle.of(context),
       onRun: toggle,
-      child: value
-          ? Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.indigo,
-                boxShadow: [
+      child: AnimatedContainer(
+        duration: ShowcaseConfig.of(context).duration,
+        curve: Curves.easeIn,
+        width: 100.0,
+        height: 100.0,
+        decoration: BoxDecoration(
+          color: value ? Colors.cyan : Colors.grey.shade300,
+          boxShadow: value
+              ? [
                   BoxShadow(
                     color: Colors.grey.shade300,
                     offset: const Offset(3.0, 3.0),
                     blurRadius: 3.0,
                     spreadRadius: 3.0,
                   ),
-                ],
-                shape: BoxShape.circle,
-              ),
-              child: Center(
-                child: Text(
-                  Strings.on,
-                  style: Theme.of(context).primaryTextTheme.headline6,
-                ),
-              ),
-            )
-          : Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                shape: BoxShape.circle,
-              ),
-              child: Center(
-                child: Text(
-                  Strings.off,
-                  style: Theme.of(context).primaryTextTheme.headline6,
-                ),
-              ),
-            ),
+                ]
+              : null,
+          shape: BoxShape.circle,
+        ),
+        child: Center(
+          child: Text(
+            value ? Strings.on : Strings.off,
+            style: Theme.of(context).primaryTextTheme.headline6,
+          ),
+        ),
+      ),
     );
   }
 }

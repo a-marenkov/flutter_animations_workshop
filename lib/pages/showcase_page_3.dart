@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 
 import 'common/showcase_config.dart';
 import 'common/showcase_scaffold.dart';
-import 'common/showcase_title.dart';
 
 /// Showcase of [AnimatedVisibility]
 class ShowcaseAnimatedVisibility extends StatefulWidget {
@@ -31,7 +30,6 @@ class _ShowcaseAnimatedVisibilityState
     final config = ShowcaseConfig.of(context);
 
     return ShowcaseScaffold(
-      title: ShowcaseTitle.of(context),
       onRun: onRun,
       child: AnimatedVisibility(
         duration: config.duration,

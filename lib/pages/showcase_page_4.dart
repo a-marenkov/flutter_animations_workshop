@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 
 import 'common/showcase_config.dart';
 import 'common/showcase_scaffold.dart';
-import 'common/showcase_title.dart';
 import 'common/widgets.dart';
 
 /// Showcase of custom [AnimatedPulse]
@@ -17,7 +16,6 @@ class ShowcaseAnimatedPulse extends StatelessWidget {
     final config = ShowcaseConfig.of(context);
 
     return ShowcaseScaffold(
-      title: ShowcaseTitle.of(context),
       onRun: null,
       child: AnimatedPulse(
         radius: 24.0,

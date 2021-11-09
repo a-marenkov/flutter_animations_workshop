@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'common/showcase_scaffold.dart';
-import 'common/showcase_title.dart';
 
 /// Showcase of [TweenAnimationBuilder] usage
 class ShowcaseTweenAnimationBuilder extends StatefulWidget {
@@ -28,7 +27,6 @@ class _ShowcaseTweenAnimationBuilderState
   @override
   Widget build(BuildContext context) {
     return ShowcaseScaffold(
-      title: ShowcaseTitle.of(context),
       onRun: toggle,
       child: value
           ? const Icon(

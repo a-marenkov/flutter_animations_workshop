@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_animations_workshop/pages/common/showcase_title.dart';
 
 import '../../strings.dart';
 
 /// Generic page wrapper for animation showcase
 class ShowcaseScaffold extends StatelessWidget {
-  final String title;
   final Widget child;
   final VoidCallback? onRun;
 
   const ShowcaseScaffold({
     Key? key,
-    required this.title,
     required this.child,
     required this.onRun,
   }) : super(key: key);
@@ -27,7 +26,11 @@ class ShowcaseScaffold extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(
+        title: Text(
+          ShowcaseTitle.of(context),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

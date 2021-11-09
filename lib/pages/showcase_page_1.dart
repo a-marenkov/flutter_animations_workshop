@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 
 import '../strings.dart';
 import 'common/showcase_scaffold.dart';
-import 'common/showcase_title.dart';
 
 /// Showcase of [AnimatedContainer] usage
 class ShowcaseAnimatedContainer extends StatefulWidget {
@@ -28,7 +27,6 @@ class _ShowcaseAnimatedContainerState extends State<ShowcaseAnimatedContainer> {
   @override
   Widget build(BuildContext context) {
     return ShowcaseScaffold(
-      title: ShowcaseTitle.of(context),
       onRun: toggle,
       child: value
           ? Container(

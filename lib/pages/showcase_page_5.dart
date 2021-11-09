@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'common/showcase_scaffold.dart';
-import 'common/showcase_title.dart';
 import 'common/widgets.dart';
 
 class ShowcaseAnimatedBouncy extends StatefulWidget {
@@ -17,10 +16,9 @@ class ShowcaseAnimatedBouncy extends StatefulWidget {
 class _ShowcaseAnimatedBouncyState extends State<ShowcaseAnimatedBouncy> {
   @override
   Widget build(BuildContext context) {
-    return ShowcaseScaffold(
-      title: ShowcaseTitle.of(context),
+    return const ShowcaseScaffold(
       onRun: null,
-      child: const AnimatedBouncy(
+      child: AnimatedBouncy(
         child: ColoredCircle(
           radius: 64,
           color: Colors.indigo,
